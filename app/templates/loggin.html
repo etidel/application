@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!------ Include the above in your HEAD tag ---------->
+
+{% block content %}
+
+<br><br><br> <br><br>
+<div class="container">
+    <div class="card card-container">
+      
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+      
+       
+                               
+                               
+
+             <form action="" method="post"  class="form-signin">
+           
+                {% csrf_token %}                          
+<!-- <input type="text" class="form-control" id="username" name="_username" value="{{ form.username }}" required="required" placeholder="username"/>  -->
+{{ form.username }}
+<!-- <input type="password" class="form-control" id="password" name="_password" placeholder="Password"  value="{{form.password }}" required/> -->
+      
+{{form.password }}
+<div id="remember" class="checkbox">
+
+                <label>
+                     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />Souviens-toi de moi
+                </label>
+            </div>
+                     <input type="submit" id="_submit"
+       name="_submit" value="Login" class="btn btn-lg btn-primary btn-block btn-signin" type="submit"/>
+        <!-- /form -->
+        
+                Vous n'avez pas de compte?<a href= "{% url 'register' %}">s'inscrire</a>
+                <br>
+          
+        <a href="" class="forgot-password">
+            Mot de passe oublié?
+        </a>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+{% endblock %}
